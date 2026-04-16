@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Müzikler</title>
+<link rel="stylesheet" href="style.css">
+<script>
+function ara() {
+    let input = document.getElementById("arama").value.toLowerCase();
+    let songs = document.getElementsByClassName("song");
+
+    for (let i = 0; i < songs.length; i++) {
+        let title = songs[i].getAttribute("data-title").toLowerCase();
+        if (title.includes(input)) {
+            songs[i].style.display = "block";
+        } else {
+            songs[i].style.display = "none";
+        }
+    }
+}
+</script>
+</head>
+<body class="music">
+
+<header>
+    <h1>EMRULLAH HOME - Müzikler</h1>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="muzikler.html">Müzikler</a>
+        <a href="videolar.html">Videolar</a>
+    </nav>
+</header>
+
+   
+    <input type="text" id="arama" placeholder="Şarkı adı yaz...">
+    <button onclick="ara()">Ara</button>
+
+    
+    <div class="card song" data-title="Ahmet Aslan - Susarak özlüyorum  2003 Va U Waxt">
+        <h3>Ahmet Aslan - Susarak özlüyorum  2003 Va U Waxt</h3>
+        <audio controls>
+            <source src="müzikler/Ahmet Aslan - Susarak özlüyorum  2003 Va U Waxt.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+   
+    <div class="card song" data-title="Avesta - Kirasê sor">
+        <h3>Avesta - Kirasê sor</h3>
+        <audio controls>
+            <source src="müzikler/Avesta - Kirasê sor.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+ <div class="card song" data-title="Aytekin Ataş - O Yar Gelir">
+        <h3>Aytekin Ataş - O Yar Gelir</h3>
+        <audio controls>
+            <source src="müzikler/Aytekin Ataş - O Yar Gelir.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+ <div class="card song" data-title="gripin - Aşk Nerden Nereye (Official Video)">
+        <h3>gripin - Aşk Nerden Nereye (Official Video)</h3>
+        <audio controls>
+            <source src="müzikler/gripin - Aşk Nerden Nereye (Official Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+ <div class="card song" data-title="Heme Haci - Leyla Yar">
+        <h3>Heme Haci - Leyla Yar</h3>
+        <audio controls>
+            <source src="müzikler/Heme Haci - Leyla Yar.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+ <div class="card song" data-title="yirmi7 & Birol Namoğlu (Gripin) - Muhtemel Aşk (Official Video)">
+        <h3>yirmi7 & Birol Namoğlu (Gripin) - Muhtemel Aşk (Official Video)</h3>
+        <audio controls>
+            <source src="müzikler/yirmi7 & Birol Namoğlu (Gripin) - Muhtemel Aşk (Official Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+ <div class="card song" data-title="yirmi7 - Sokak Lambası (Official Video)">
+        <h3>yirmi7 - Sokak Lambası (Official Video)</h3>
+        <audio controls>
+            <source src="müzikler/yirmi7 - Sokak Lambası (Official Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+ </section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const players = document.querySelectorAll("audio");
+
+    players.forEach(player => {
+        player.addEventListener("play", function () {
+            players.forEach(otherPlayer => {
+                if (otherPlayer !== player) {
+                    otherPlayer.pause();
+                }
+            });
+        });
+    });
+});
+</script>
+
+</body>
+</html>

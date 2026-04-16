@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Videolar - Emrullah Seslendirme</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="video">
+
+<header>
+    <h1>EMRULLAH HOME - Videolar</h1>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="muzikler.html">Müzikler</a>
+        <a href="videolar.html">Videolar</a>
+    </nav>
+</header>
+
+
+</header>
+<section class="content video-grid">
+
+    <!-- 1. VİDEO -->
+    <div class="video-card">
+        <h3>1️⃣ Tanıtım Videosu</h3>
+        <video controls>
+            <source src="videolar/15- Select And Mask Seç ve Maskele - İnsan Saç Zor Seçimlerin Dekupesi - Photoshop CC Eğitim Seti.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- 2. VİDEO -->
+    <div class="video-card">
+        <h3>2️⃣ Proje Videosu</h3>
+        <video controls>
+      <source src="videolar/030_Sayfa Geçişi Nasıl Yapılır (Navigator Kullanımı) - Flutter Dersleri.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- 3. VİDEO -->
+    <div class="video-card">
+        <h3>3️⃣ Örnek Seslendirme</h3>
+        <video controls>
+            <source src="videolar/029_Component Oluşturma - Flutter Dersleri.mp4" type="video/mp4">
+        </video>
+    </div>
+
+<div class="video-card">
+        <h3>4️⃣ ders videosu</h3>
+        <video controls>
+            <source src="videolar/028_Container - Padding - Margin - Card - SizedBox - Align Widget- Flutter Dersleri.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <h3>5️⃣ Icon ve Button Kullanımı</h3>
+        <video controls>
+            <source src="videolar/027_Icon ve Button Widgetları (Icon - ElevatedButton - TextButton - IconButton) - Flutter Dersleri.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <h3>6️⃣ Appbar Kullanımı</h3>
+        <video controls>
+            <source src="videolar/023_AppBar - Flutter Dersleri.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</section>
+<div class="video-container">
+<iframe id="yt1"
+    src="https://www.youtube.com/embed/ts0mU1_fQVA?enablejsapi=1"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+<iframe id="yt2"
+    src="https://www.youtube.com/embed/W3cWz5r_BWQ?enablejsapi=1"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+<iframe id="yt3"
+    src="https://www.youtube.com/embed/4VR-6AS0-l4?enablejsapi=1"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+<iframe id="yt4"
+    src="https://www.youtube.com/embed/oLOOAFETHO0?enablejsapi=1"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+<iframe id="yt5"
+    src="https://www.youtube.com/embed/ETe2qVu-bYE?enablejsapi=1"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+<iframe id="yt6"
+    src="https://www.youtube.com/embed/tIQsqJKa9Xs?enablejsapi=1"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+let players = [];
+
+function onYouTubeIframeAPIReady() {
+  const ids = ["yt1","yt2","yt3","yt4","yt5","yt6"];
+
+  ids.forEach(id => {
+    players.push(new YT.Player(id, {
+      events: {
+        onStateChange: onPlayerStateChange
+      }
+    }));
+  });
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.PLAYING) {
+    players.forEach(player => {
+      if (player !== event.target) {
+        player.pauseVideo();
+      }
+    });
+  }
+}
+</script>
+<script>
+const videos = document.querySelectorAll("video");
+
+videos.forEach(video => {
+    video.addEventListener("play", () => {
+        videos.forEach(v => {
+            if (v !== video) {
+                v.pause();
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

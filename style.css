@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    text-align: center;
+    transition: 0.5s;
+}
+
+header {
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+.content {
+    padding: 40px;
+}
+
+/* ARKA PLANLAR */
+.home {
+    background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") no-repeat center center/cover;
+}
+
+.music {
+    background: url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f") no-repeat center center/cover;
+}
+
+.video {
+    background: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7") no-repeat center center/cover;
+}
+
+/* Kart Tasarım */
+.card {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 15px;
+}
+
+
+
+/* Müzik */
+audio {
+    width: 100%;
+}
+
+/* Arama */
+input {
+    padding: 10px;
+    width: 250px;
+}
+
+button {
+    padding: 10px;
+    background: orange;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: red;
+}
+body {
+   
+    font-family: Arial;
+}
+
+.video-container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 45px;
+    padding: 30px;
+}
+
+.video-container iframe {
+  
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+/* hover efekti */
+.video-container iframe:hover {
+    transform: scale(1.05);
+}
+
+.kapsayici {
+  display: flex;
+  align-items: center; /* Elemanları dikeyde hizalamak için */
+}
+.dark{
+background:#111;
+color:white;
+}
+a{
+transition:0.3s;
+}
+
+a:hover{
+color:#00d9ff;
+transform:scale(1.05);
+}
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;          /* sığmazsa alta geçer */
+    justify-content: center;
+    gap: 25px;                /* videolar arası boşluk */
+    padding: 20px;
+}
+
+.video-card {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 15px;
+    width: 500px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* hover efekti */
+.video-card:hover {
+    transform: scale(1.05);
+}
